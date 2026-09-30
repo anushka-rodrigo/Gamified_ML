@@ -108,4 +108,3 @@ df["genre_list"] = df["genres"].str.split(r"\|\|")
 
 - The data describes games, not individual people, but ratings come from user activity on the source platform.
 - Because coverage of rated games is small and skewed toward well-known titles, conclusions should not be generalised to "all video games".
-- Check the source's terms before sharing the file. If in doubt, share the download instructions instead of the file itself.
