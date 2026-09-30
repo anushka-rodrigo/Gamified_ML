@@ -7,6 +7,7 @@ A table of video games with metadata and player-generated statistics. This is th
 | | |
 |---|---|
 | File | `game_info.csv` |
+| Source | Kaggle: [jummyegg/rawg-game-dataset](https://www.kaggle.com/datasets/jummyegg/rawg-game-dataset) (data from the RAWG API) |
 | Size | about 76 MB |
 | Rows | 474,417 (one per game) |
 | Columns | 27 |
@@ -17,14 +18,16 @@ A table of video games with metadata and player-generated statistics. This is th
 
 ## Provenance
 
-The column names match the fields of the **RAWG video game database API** (rawg.io), so the data appears to be a scrape of RAWG from around 2019-2020.
+- **Source:** "Video Game Dataset" by **jummyegg** on Kaggle: https://www.kaggle.com/datasets/jummyegg/rawg-game-dataset
+- **Original data:** collected by the Kaggle author from the **RAWG video game database API** (https://rawg.io/apidocs). Code to rebuild the dataset: https://github.com/trung-hn/video-game-encyclopedia
+- **Snapshot date:** 22 December 2020 (as stated by the author; matches the latest `updated` value in the file)
+- **Date downloaded:** **[fill in]**
+- **Licence / terms of use:** **[check the Kaggle page and RAWG's API terms before redistributing]**
+- If you re-publish this data anywhere, credit RAWG and the Kaggle author.
 
-- Original source / download link: **[fill in]**
-- Date downloaded: **[fill in]**
-- Licence / terms of use: **[fill in and check the source's terms before redistributing]**
-- If you re-publish this data anywhere, credit the original source.
+> **The raw file is not included in this repository.** Download `game_info.csv` from the Kaggle link above and place it at `data/raw_data/game_info.csv`.
 
-> The column descriptions below were written from inspecting the data and from the meaning of the matching RAWG fields. Anything marked *(inferred)* is my best interpretation, not something the file states.
+> The `added_status_*` descriptions below come from the dataset author's documentation. The other column descriptions were written from inspecting the data and from the meaning of the matching RAWG fields. Anything marked *(inferred)* is a best interpretation, not something the file states.
 
 ## Conventions used in the file
 
@@ -58,12 +61,12 @@ The column names match the fields of the **RAWG video game database API** (rawg.
 | `genres` | text (multi) | Genre tags | **21.7%** | 19 distinct values (Action, Adventure, Puzzle are the most common) |
 | `publishers` | text (multi) | Publishers | **70.3%** | About 42,000 distinct names |
 | `esrb_rating` | text | ESRB age rating | **88.2%** | Everyone 10+ (36,682), Teen (10,031), Mature (4,859), Everyone (3,837), Adults Only (405), Rating Pending (50) |
-| `added_status_yet` | integer | Users who added the game as "not yet played" *(inferred)* | 0% | 94.9% are 0 |
-| `added_status_owned` | integer | Users who mark it as owned | 0% | 87.5% are 0 |
-| `added_status_beaten` | integer | Users who mark it as beaten | 0% | 94.2% are 0 |
-| `added_status_toplay` | integer | Users who plan to play it | 0% | 94.1% are 0 |
-| `added_status_dropped` | integer | Users who dropped it | 0% | 95.0% are 0 |
-| `added_status_playing` | integer | Users currently playing it | 0% | 98.0% are 0 |
+| `added_status_yet` | integer | RAWG users who have the game as "Not played" | 0% | 94.9% are 0 |
+| `added_status_owned` | integer | RAWG users who have the game as "Owned" | 0% | 87.5% are 0 |
+| `added_status_beaten` | integer | RAWG users who have the game as "Completed" | 0% | 94.2% are 0 |
+| `added_status_toplay` | integer | RAWG users who have the game as "To play" | 0% | 94.1% are 0 |
+| `added_status_dropped` | integer | RAWG users who have the game as "Played but not beaten" | 0% | 95.0% are 0 |
+| `added_status_playing` | integer | RAWG users who have the game as "Playing" | 0% | 98.0% are 0 |
 
 ## Known issues and quirks
 
