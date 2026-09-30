@@ -1,0 +1,10 @@
+# Raw dataset (too big, and not ours to redistribute)
+data/raw_data/*.csv
+
+# Jupyter / Python clutter
+.ipynb_checkpoints/
+__pycache__/
+*.pyc
+.venv/
+venv/
+.DS_Store
